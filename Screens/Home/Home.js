@@ -1,22 +1,18 @@
 import React from "react";
 import Svg, { Path } from "react-native-svg";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import ProfileScreen from "../ProfileScreen/ProfileScreen";
 import CreatePostsScreen from "../CreatePostsScreen/CreatePostsScreen";
 import PostsScreen from "../PostsScreen/PostsScreen";
 import { TouchableOpacity } from "react-native";
+import { MiddleNavigationButtonContainer } from "./Home.styled";
 
 const Tabs = createBottomTabNavigator();
 
 const Home = () => {
   return (
-    <Tabs.Navigator
-      tabBarOptions={{
-        activeTintColor: "tomato",
-        inactiveTintColor: "gray",
-      }}
-    >
+    <Tabs.Navigator>
       <Tabs.Screen
         name="PostsScreen"
         component={PostsScreen}
@@ -76,18 +72,7 @@ const Home = () => {
           tabBarLabel: "",
           tabBarIcon: ({ focused }) => {
             return (
-              <View
-                style={{
-                  backgroundColor: "#FF6C00",
-                  width: 70,
-                  height: 40,
-                  marginTop: 15,
-                  borderRadius: 20,
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}
-              >
+              <MiddleNavigationButtonContainer>
                 <Svg width={24} height={24} viewBox="0 0 30 30">
                   <Path
                     fill="#fff"
@@ -95,7 +80,7 @@ const Home = () => {
                     d="M5 13h6v6a1 1 0 0 0 2 0v-6h6a1 1 0 0 0 0-2h-6V5a1 1 0 0 0-2 0v6H5a1 1 0 0 0 0 2z"
                   />
                 </Svg>
-              </View>
+              </MiddleNavigationButtonContainer>
             );
           },
         }}
@@ -123,13 +108,5 @@ const Home = () => {
     </Tabs.Navigator>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
 
 export default Home;
