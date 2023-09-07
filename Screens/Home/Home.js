@@ -1,6 +1,6 @@
 import React from "react";
 import Svg, { Path } from "react-native-svg";
-import { StyleSheet, View } from "react-native";
+import { View } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import ProfileScreen from "../ProfileScreen/ProfileScreen";
 import CreatePostsScreen from "../CreatePostsScreen/CreatePostsScreen";
@@ -10,7 +10,7 @@ import { MiddleNavigationButtonContainer } from "./Home.styled";
 
 const Tabs = createBottomTabNavigator();
 
-const Home = () => {
+const Home = ({ navigation }) => {
   return (
     <Tabs.Navigator>
       <Tabs.Screen
@@ -68,7 +68,7 @@ const Home = () => {
       <Tabs.Screen
         name="CreatePosts"
         component={CreatePostsScreen}
-        options={{
+        options={({ route }) => ({
           tabBarLabel: "",
           tabBarIcon: ({ focused }) => {
             return (
@@ -83,7 +83,35 @@ const Home = () => {
               </MiddleNavigationButtonContainer>
             );
           },
-        }}
+          tabBarVisible: false,
+          title: "Створити публікацію",
+          headerStyle: {
+            height: 88,
+            backgroundColor: "#fff",
+            borderBottomColor: "rgba(0, 0, 0, 0.30)",
+            borderBottomWidth: 0.5,
+          },
+          headerRightContainerStyle: {
+            paddingRight: 16,
+          },
+          headerLeftContainerStyle: {
+            paddingLeft: 16,
+          },
+
+          headerTitleAlign: "center",
+          headerTintColor: "#212121",
+          headerLeft: () => (
+            <TouchableOpacity title="Back" onPress={() => navigation.goBack()}>
+              <Svg width={24} height={24} viewBox="0 0 30 30">
+                <Path fill="#fff" stroke="#000" d="M20 12H4 M10 18L4 12L10 6" />
+              </Svg>
+            </TouchableOpacity>
+          ),
+          headerTitleStyle: {
+            fontWeight: "500",
+            fontSize: 17,
+          },
+        })}
       />
       <Tabs.Screen
         name="Profile"
