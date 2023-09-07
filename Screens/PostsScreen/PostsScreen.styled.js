@@ -37,3 +37,34 @@ export const PostImageDescription = styled(Text)`
   font-weight: 500;
   margin-bottom: 8px;
 `;
+
+export const PostDescriptionContainer = styled(View)`
+  display: flex;
+  flex-direction: row;
+`;
+
+export const CommentInfoContainer = styled(View)`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+`;
+
+export const CommentInfoNumber = styled(Text)`
+  margin-left: 6px;
+  color: #bdbdbd;
+  font-size: 16px;
+  font-weight: 400;
+`;
+
+export const LocationDescriptionContainer = styled(View)`
+  display: flex;
+  flex-direction: row;
+  margin-left: auto;
+`;
+
+export const LocationInfoText = styled(Text)`
+  color: #212121;
+  font-size: 16px;
+  font-weight: 400;
+  text-decoration-line: underline;
+`;

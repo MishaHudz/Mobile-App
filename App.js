@@ -1,5 +1,6 @@
 import LoginScreen from "./Screens/LoginScreen/LoginScreen";
 import "react-native-gesture-handler";
+import CommentsScreen from "./Screens/CommentsScreen/CommentsScreen";
 import RegistrationScreen from "./Screens/RegistrationScreen/RegistrationScreen";
 import { NavigationContainer } from "@react-navigation/native";
 import { useFonts } from "expo-font";
@@ -31,6 +32,8 @@ export default function App() {
           component={Home}
           options={{ headerShown: false }}
         />
+
+        <MainStack.Screen name="Comments" component={CommentsScreen} />
       </MainStack.Navigator>
     </NavigationContainer>
   );

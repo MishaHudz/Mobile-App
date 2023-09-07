@@ -1,4 +1,4 @@
-import { useNavigation, useRoute } from "@react-navigation/native";
+import { useNavigation } from "@react-navigation/native";
 import { useEffect, useState } from "react";
 import Svg, { Path } from "react-native-svg";
 import { Camera } from "expo-camera";
