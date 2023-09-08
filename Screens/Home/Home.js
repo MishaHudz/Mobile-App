@@ -117,6 +117,7 @@ const Home = ({ navigation }) => {
         name="Profile"
         component={ProfileScreen}
         options={{
+          headerShown: false,
           tabBarLabel: "",
           tabBarIcon: ({ focused }) => {
             return (

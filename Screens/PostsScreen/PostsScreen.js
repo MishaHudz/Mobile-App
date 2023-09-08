@@ -14,7 +14,14 @@ import {
   PostImageDescription,
   PostScreenContainer,
   ScrollableContainer,
+  UserDescriptionContainer,
+  UserDescriptionEmail,
+  UserDescriptionImage,
+  UserDescriptionName,
+  UserDescriptionNameContainer,
 } from "./PostsScreen.styled";
+
+import BackgroundImage from "../../images/PhotoBG.jpg";
 
 export default function PostsScreen() {
   const navigation = useNavigation();
@@ -30,6 +37,15 @@ export default function PostsScreen() {
 
   return (
     <PostScreenContainer>
+      {/*  */}
+      <UserDescriptionContainer>
+        <UserDescriptionImage source={BackgroundImage} />
+        <UserDescriptionNameContainer>
+          <UserDescriptionName>Natali Romanova</UserDescriptionName>
+          <UserDescriptionEmail>email@example.com</UserDescriptionEmail>
+        </UserDescriptionNameContainer>
+      </UserDescriptionContainer>
+      {/*  */}
       <ScrollableContainer>
         {posts?.map(({ photo, location, photoName, comments = 0 }) => {
           return (

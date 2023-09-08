@@ -68,3 +68,30 @@ export const LocationInfoText = styled(Text)`
   font-weight: 400;
   text-decoration-line: underline;
 `;
+
+export const UserDescriptionContainer = styled(View)`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+`;
+
+export const UserDescriptionImage = styled(Image)`
+  width: 60px;
+  height: 60px;
+  border-radius: 16px;
+  margin-right: 8px;
+`;
+
+export const UserDescriptionNameContainer = styled(View)``;
+
+export const UserDescriptionName = styled(Text)`
+  color: #212121;
+  font-size: 13px;
+  font-weight: 700;
+`;
+
+export const UserDescriptionEmail = styled(Text)`
+  color: rgba(33, 33, 33, 0.8);
+  font-size: 11px;
+  font-weight: 400;
+`;
